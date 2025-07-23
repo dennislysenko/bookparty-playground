@@ -9,6 +9,7 @@
     "dev": "ts-node src/index.ts",
     "book-details": "ts-node src/book-details.ts",
     "dev:details": "ts-node src/book-details.ts",
+    "related-books": "ts-node src/related-books.ts",
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
