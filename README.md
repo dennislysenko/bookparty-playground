@@ -1,47 +1,71 @@
-# BookParty TypeScript Project
+# BookParty 📚
 
-A basic TypeScript project initialized with pnpm.
+A TypeScript-powered book search tool using the Open Library API.
 
-## Getting Started
+## Features
 
-### Prerequisites
-- Node.js
-- pnpm
+- **🔍 Book Search** - Search for books with fuzzy matching
+- **📖 Book Details** - Get detailed information including synopsis
+- **🌐 Amazon Links** - Direct links to Amazon when available
 
-### Installation
+## Quick Start
+
+Install dependencies:
 ```bash
 pnpm install
 ```
 
-### Available Scripts
-
-- `pnpm run dev` - Run the TypeScript file directly using ts-node
-- `pnpm run build` - Compile TypeScript to JavaScript in the `dist` folder
-- `pnpm run start` - Run the compiled JavaScript from the `dist` folder
-- `pnpm run clean` - Remove the `dist` folder
-
-### Project Structure
-```
-bookparty/
-├── src/
-│   └── index.ts          # Main TypeScript file
-├── dist/                 # Compiled JavaScript (created after build)
-├── package.json
-├── tsconfig.json         # TypeScript configuration
-└── README.md
-```
-
 ## Usage
 
-### Development
-Run the TypeScript file directly:
+### Search for Books
 ```bash
-pnpm run dev
+npm run dev "search terms"
 ```
 
-### Production
-Build and run the compiled version:
+**Examples:**
 ```bash
-pnpm run build
-pnpm run start
-``` 
+npm run dev "lord of the rings"
+npm run dev "1984"
+npm run dev "harry potter"
+```
+
+### Get Book Details
+```bash
+npm run book-details "WORK_ID"
+```
+
+**Examples:**
+```bash
+npm run book-details "OL893415W"           # Dune
+npm run book-details "/works/OL27448W"     # Lord of the Rings
+```
+
+*💡 Get work IDs from the search results*
+
+## What You Get
+
+### Search Results Show:
+- Title and author
+- Publication year  
+- Edition count
+- Available formats (📖 = full text, 🌐 = public scan)
+
+### Book Details Include:
+- Full synopsis/description
+- Author biographies
+- Subject classifications
+- Cover images
+- External links (Amazon, reviews)
+- Publication metadata
+
+## Amazon Integration
+
+Books with Amazon IDs automatically show purchase links:
+```
+🛒 Amazon URL: https://amazon.com/dp/1435140745
+```
+
+## API Used
+
+- **Open Library Search API** - https://openlibrary.org/search.json
+- **Open Library Works API** - https://openlibrary.org/works/{id}.json 
